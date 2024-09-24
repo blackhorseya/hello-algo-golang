@@ -11,5 +11,5 @@ func TestArray(t *testing.T) {
 	fmt.Println("array arr =", arr)
 
 	nums := []int{1, 3, 2, 5, 4}
-	fmt.Println("array nums =", nums)
+	fmt.Println("slice nums =", nums)
 }
