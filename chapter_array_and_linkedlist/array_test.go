@@ -12,4 +12,8 @@ func TestArray(t *testing.T) {
 
 	nums := []int{1, 3, 2, 5, 4}
 	fmt.Println("slice nums =", nums)
+
+	// random access
+	randomNum := randomAccess(nums)
+	fmt.Println("get a random number from nums", randomNum)
 }
