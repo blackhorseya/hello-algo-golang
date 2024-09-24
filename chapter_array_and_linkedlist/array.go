@@ -60,3 +60,14 @@ func find(nums []int, target int) int {
 
 	return -1
 }
+
+func extend(nums []int, enlarge int) []int {
+	// create a new slice
+	res := make([]int, len(nums)+enlarge)
+
+	for i, num := range nums {
+		res[i] = num
+	}
+
+	return res
+}
