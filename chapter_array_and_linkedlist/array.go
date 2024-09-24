@@ -29,3 +29,24 @@ func remove(nums []int, index int) {
 		nums[i] = nums[i+1]
 	}
 }
+
+func traverse(nums []int) {
+	count := 0
+
+	// 透過索引走訪陣列
+	for i := 0; i < len(nums); i++ {
+		count++
+	}
+
+	count = 0
+	// 直接走訪陣列元素
+	for _, num := range nums {
+		count += num
+	}
+
+	// 同時走訪資料索引和元素
+	for index, num := range nums {
+		count += nums[index]
+		count += num
+	}
+}
