@@ -25,7 +25,7 @@ func access(head *ListNode, index int) *ListNode {
 		if head == nil {
 			return nil
 		}
-		head.Next = head
+		head = head.Next
 	}
 
 	return head
