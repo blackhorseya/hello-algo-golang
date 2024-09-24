@@ -50,3 +50,15 @@ func traverse(nums []int) {
 		count += num
 	}
 }
+
+func find(nums []int, target int) (index int) {
+	index = -1
+	for i := 0; i < len(nums); i++ {
+		if nums[i] == target {
+			index = i
+			break
+		}
+	}
+
+	return index
+}
