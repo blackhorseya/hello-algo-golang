@@ -39,3 +39,33 @@ func TestStack(t *testing.T) {
 	isEmpty := len(stack) == 0
 	fmt.Println("栈是否为空 =", isEmpty)
 }
+
+func TestLinkedListStack(t *testing.T) {
+	// 初始化栈
+	stack := newLinkedListStack()
+	// 元素入栈
+	stack.push(1)
+	stack.push(3)
+	stack.push(2)
+	stack.push(5)
+	stack.push(4)
+	fmt.Print("栈 stack = ")
+	PrintList(stack.toList())
+
+	// 访问栈顶元素
+	peek := stack.peek()
+	fmt.Println("栈顶元素 peek =", peek)
+
+	// 元素出栈
+	pop := stack.pop()
+	fmt.Print("出栈元素 pop = ", pop, ", 出栈后 stack = ")
+	PrintList(stack.toList())
+
+	// 获取栈的长度
+	size := stack.size()
+	fmt.Println("栈的长度 size =", size)
+
+	// 判断是否为空
+	isEmpty := stack.isEmpty()
+	fmt.Println("栈是否为空 =", isEmpty)
+}

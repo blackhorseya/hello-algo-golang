@@ -1,6 +1,7 @@
 package pkg
 
 import (
+	"container/list"
 	"fmt"
 	"strconv"
 	"strings"
@@ -10,6 +11,22 @@ import (
 func PrintSlice[T any](nums []T) {
 	fmt.Printf("%v", nums)
 	fmt.Println()
+}
+
+// PrintList 打印列表
+func PrintList(list *list.List) {
+	if list.Len() == 0 {
+		fmt.Print("[]\n")
+		return
+	}
+	e := list.Front()
+	// 强转为 string, 会影响效率
+	fmt.Print("[")
+	for e.Next() != nil {
+		fmt.Print(e.Value, " ")
+		e = e.Next()
+	}
+	fmt.Print(e.Value, "]\n")
 }
 
 // PrintLinkedList 打印链表
