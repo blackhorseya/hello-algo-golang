@@ -42,3 +42,10 @@ func PrintLinkedList(node *ListNode) {
 	builder.WriteString(strconv.Itoa(node.Val))
 	fmt.Println(builder.String())
 }
+
+// PrintMap 打印哈希表
+func PrintMap[K comparable, V any](m map[K]V) {
+	for key, value := range m {
+		fmt.Println(key, "->", value)
+	}
+}
