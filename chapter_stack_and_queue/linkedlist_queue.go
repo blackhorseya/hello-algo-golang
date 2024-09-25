@@ -14,38 +14,38 @@ func newLinkedListQueue() *linkedListQueue {
 	}
 }
 
-func (s *linkedListQueue) push(value any) {
-	s.data.PushBack(value)
+func (q *linkedListQueue) push(value any) {
+	q.data.PushBack(value)
 }
 
-func (s *linkedListQueue) pop() any {
-	if s.isEmpty() {
+func (q *linkedListQueue) pop() any {
+	if q.isEmpty() {
 		return nil
 	}
 
-	e := s.data.Front()
-	s.data.Remove(e)
+	e := q.data.Front()
+	q.data.Remove(e)
 	return e.Value
 }
 
-func (s *linkedListQueue) peek() any {
-	if s.isEmpty() {
+func (q *linkedListQueue) peek() any {
+	if q.isEmpty() {
 		return nil
 	}
 
-	e := s.data.Front()
+	e := q.data.Front()
 	return e.Value
 }
 
-func (s *linkedListQueue) isEmpty() bool {
-	return s.size() == 0
+func (q *linkedListQueue) isEmpty() bool {
+	return q.size() == 0
 }
 
-func (s *linkedListQueue) size() int {
-	return s.data.Len()
+func (q *linkedListQueue) size() int {
+	return q.data.Len()
 }
 
 /* 獲取 List 用於列印 */
-func (s *linkedListQueue) toList() *list.List {
-	return s.data
+func (q *linkedListQueue) toList() *list.List {
+	return q.data
 }
