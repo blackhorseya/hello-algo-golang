@@ -23,7 +23,7 @@ func (s *arrayStack) push(v int) {
 	s.data = append(s.data, v)
 }
 
-func (s *arrayStack) peak() any {
+func (s *arrayStack) peek() any {
 	if s.isEmpty() {
 		return nil
 	}
