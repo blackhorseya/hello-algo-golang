@@ -13,6 +13,15 @@ func PrintSlice[T any](nums []T) {
 	fmt.Println()
 }
 
+// PrintHeap 打印堆
+func PrintHeap(h []any) {
+	fmt.Printf("堆的数组表示：")
+	fmt.Printf("%v", h)
+	fmt.Printf("\n堆的树状表示：\n")
+	root := SliceToTree(h)
+	PrintTree(root)
+}
+
 // PrintList 打印列表
 func PrintList(list *list.List) {
 	if list.Len() == 0 {
