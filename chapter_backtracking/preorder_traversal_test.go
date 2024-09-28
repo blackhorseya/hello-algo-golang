@@ -23,3 +23,23 @@ func TestPreorderTraversalICompact(t *testing.T) {
 	}
 	fmt.Println()
 }
+
+func TestPreorderTraversalIICompact(t *testing.T) {
+	/* 初始化二叉树 */
+	root := SliceToTree([]any{1, 7, 3, 4, 5, 6, 7})
+	fmt.Println("\n初始化二叉树")
+	PrintTree(root)
+
+	// 前序遍历
+	path := make([]*TreeNode, 0)
+	res := make([][]*TreeNode, 0)
+	preOrderII(root, &res, &path)
+
+	fmt.Println("\n输出所有根节点到节点 7 的路径")
+	for _, path := range res {
+		for _, node := range path {
+			fmt.Printf("%v ", node.Val)
+		}
+		fmt.Println()
+	}
+}
