@@ -36,3 +36,17 @@ func TestSubsetSumI(t *testing.T) {
 		PrintSlice(res[i])
 	}
 }
+
+func TestSubsetSumII(t *testing.T) {
+	nums := []int{4, 4, 5}
+	target := 9
+	res := subsetSumII(nums, target)
+
+	fmt.Printf("target = " + strconv.Itoa(target) + ", 输入数组 nums = ")
+	PrintSlice(nums)
+
+	fmt.Println("所有和等于 " + strconv.Itoa(target) + " 的子集 res = ")
+	for i := range res {
+		PrintSlice(res[i])
+	}
+}
