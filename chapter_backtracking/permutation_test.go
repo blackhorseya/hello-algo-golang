@@ -17,3 +17,13 @@ func TestPermutationI(t *testing.T) {
 	fmt.Printf("所有排列 res = ")
 	fmt.Println(res)
 }
+
+func TestPermutationII(t *testing.T) {
+	nums := []int{1, 2, 2}
+	fmt.Printf("输入数组 nums = ")
+	PrintSlice(nums)
+
+	res := permutationsII(nums)
+	fmt.Printf("所有排列 res = ")
+	fmt.Println(res)
+}
