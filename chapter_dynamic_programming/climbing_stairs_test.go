@@ -10,3 +10,9 @@ func TestClimbingStairsBacktrack(t *testing.T) {
 	res := climbingStairsBacktrack(n)
 	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
 }
+
+func TestClimbingStairsDFS(t *testing.T) {
+	n := 9
+	res := climbingStairsDFS(n)
+	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
+}
