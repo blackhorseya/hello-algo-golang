@@ -22,3 +22,15 @@ func TestClimbingStairsDFSMem(t *testing.T) {
 	res := climbingStairsDFSMem(n)
 	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
 }
+
+func TestClimbingStairsDP(t *testing.T) {
+	n := 9
+	res := climbingStairsDP(n)
+	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
+}
+
+func TestClimbingStairsDPComp(t *testing.T) {
+	n := 9
+	res := climbingStairsDPComp(n)
+	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
+}
