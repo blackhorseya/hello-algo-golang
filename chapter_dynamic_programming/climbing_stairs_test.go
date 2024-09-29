@@ -46,8 +46,8 @@ func TestMinCostClimbingStairsDPComp(t *testing.T) {
 	fmt.Printf("爬完楼梯的最低代价为 %d\n", res)
 }
 
-// func TestClimbingStairsConstraintDP(t *testing.T) {
-// 	n := 9
-// 	res := climbingStairsConstraintDP(n)
-// 	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
-// }
+func TestClimbingStairsConstraintDP(t *testing.T) {
+	n := 9
+	res := climbingStairsConstraintDP(n)
+	fmt.Printf("爬 %d 阶楼梯共有 %d 种方案\n", n, res)
+}
