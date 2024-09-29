@@ -13,3 +13,19 @@ func NewListNode(val int) *ListNode {
 		Val:  val,
 	}
 }
+
+// ArrayToLinkedList 将数组反序列化为链表
+func ArrayToLinkedList(arr []int) *ListNode {
+	if len(arr) == 0 {
+		return nil
+	}
+
+	head := NewListNode(arr[0])
+	cur := head
+	for _, val := range arr {
+		cur.Next = NewListNode(val)
+		cur = cur.Next
+	}
+
+	return head.Next
+}
