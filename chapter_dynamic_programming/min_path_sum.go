@@ -48,3 +48,35 @@ func minPathSumDFSMem(grid, mem [][]int, i, j int) int {
 	mem[i][j] = int(math.Min(float64(left), float64(up))) + grid[i][j]
 	return mem[i][j]
 }
+
+/* 最小路徑和：動態規劃 */
+func minPathSumDP(grid [][]int) int {
+	n, m := len(grid), len(grid[0])
+	// 初始化 dp 表
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+	}
+
+	// 初始化左上角單元格
+	dp[0][0] = grid[0][0]
+
+	// 狀態轉移：首行
+	for j := 1; j < m; j++ {
+		dp[0][j] = dp[0][j-1] + grid[0][j]
+	}
+
+	// 狀態轉移：首列
+	for i := 1; i < n; i++ {
+		dp[i][0] = dp[i-1][0] + grid[i][0]
+	}
+
+	// 狀態轉移：其餘行和列
+	for i := 1; i < n; i++ {
+		for j := 1; j < m; j++ {
+			dp[i][j] = int(math.Min(float64(dp[i][j-1]), float64(dp[i-1][j]))) + grid[i][j]
+		}
+	}
+
+	return dp[n-1][m-1]
+}
