@@ -35,16 +35,16 @@ func TestKnapsack(t *testing.T) {
 	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
 }
 
-// func TestUnboundedKnapsack(t *testing.T) {
-// 	wgt := []int{1, 2, 3}
-// 	val := []int{5, 11, 15}
-// 	c := 4
-//
-// 	// 动态规划
-// 	res := unboundedKnapsackDP(wgt, val, c)
-// 	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
-//
-// 	// 空间优化后的动态规划
-// 	res = unboundedKnapsackDPComp(wgt, val, c)
-// 	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
-// }
+func TestUnboundedKnapsack(t *testing.T) {
+	wgt := []int{1, 2, 3}
+	val := []int{5, 11, 15}
+	c := 4
+
+	// 动态规划
+	res := unboundedKnapsackDP(wgt, val, c)
+	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
+
+	// 空间优化后的动态规划
+	res = unboundedKnapsackDPComp(wgt, val, c)
+	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
+}
