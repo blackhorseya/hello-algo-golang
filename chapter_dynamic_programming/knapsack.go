@@ -69,3 +69,20 @@ func knapsackDP(wgt, val []int, cap int) int {
 
 	return dp[n][cap]
 }
+
+/* 0-1 背包：空間最佳化後的動態規劃 */
+func knapsackDPComp(wgt, val []int, cap int) int {
+	n := len(wgt)
+
+	// 初始化 dp 表
+	dp := make([]int, cap+1)
+
+	// 狀態轉移
+	for i := 1; i <= n; i++ {
+		for c := cap; c >= wgt[i-1]; c-- {
+			dp[c] = max(dp[c], dp[c-wgt[i-1]]+val[i-1])
+		}
+	}
+
+	return dp[cap]
+}
