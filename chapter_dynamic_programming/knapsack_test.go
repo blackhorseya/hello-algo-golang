@@ -15,17 +15,17 @@ func TestKnapsack(t *testing.T) {
 	res := knapsackDFS(wgt, val, n, c)
 	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
 
-	// // 记忆化搜索
-	// mem := make([][]int, n+1)
-	// for i := 0; i <= n; i++ {
-	// 	mem[i] = make([]int, c+1)
-	// 	for j := 0; j <= c; j++ {
-	// 		mem[i][j] = -1
-	// 	}
-	// }
-	// res = knapsackDFSMem(wgt, val, mem, n, c)
-	// fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
-	//
+	// 记忆化搜索
+	mem := make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		mem[i] = make([]int, c+1)
+		for j := 0; j <= c; j++ {
+			mem[i][j] = -1
+		}
+	}
+	res = knapsackDFSMem(wgt, val, mem, n, c)
+	fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
+
 	// // 动态规划
 	// res = knapsackDP(wgt, val, c)
 	// fmt.Printf("不超过背包容量的最大物品价值为 %d\n", res)
