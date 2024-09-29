@@ -80,3 +80,26 @@ func minPathSumDP(grid [][]int) int {
 
 	return dp[n-1][m-1]
 }
+
+/* 最小路徑和：空間最佳化後的動態規劃 */
+func minPathSumDPComp(grid [][]int) int {
+	n, m := len(grid), len(grid[0])
+	// 初始化 dp 表
+	dp := make([]int, m)
+
+	// 狀態轉移：首行
+	dp[0] = grid[0][0]
+	for j := 1; j < m; j++ {
+		dp[j] = dp[j-1] + grid[0][j]
+	}
+	// 狀態轉移：其餘行和列
+	for i := 1; i < n; i++ {
+		// 狀態轉移：首列
+		dp[0] = dp[0] + grid[i][0]
+		// 狀態轉移：其餘列
+		for j := 1; j < m; j++ {
+			dp[j] = int(math.Min(float64(dp[j-1]), float64(dp[j]))) + grid[i][j]
+		}
+	}
+	return dp[m-1]
+}
